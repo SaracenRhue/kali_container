@@ -11,13 +11,13 @@ RUN useradd -ms /bin/bash user && \
     adduser user sudo
 
 # setup zsh
-RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting neofetch && \
-    echo "plugins=(zsh-autosuggestions)" >> ~/.zshrc && \
-    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k && \
-    echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc && \
-    curl -L http://install.ohmyz.sh | sh && \
-    chsh -s $(which zsh) user && \
-    echo "neofetch" >> ~/.zshrc
+# RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting neofetch && \
+#     echo "plugins=(zsh-autosuggestions)" >> ~/.zshrc && \
+#     git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k && \
+#     echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc && \
+#     curl -L http://install.ohmyz.sh | sh && \
+#     chsh -s $(which zsh) user && \
+#     echo "neofetch" >> ~/.zshrc
 
 # Expose port 22
 ENV PORT=22
