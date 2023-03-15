@@ -8,7 +8,9 @@ RUN apt install -y sudo ssh nvidia-cuda-toolkit nvidia-driver
 # Add a new user
 RUN useradd -ms /bin/bash user && \
     echo "user:password" | chpasswd && \
-    adduser user sudo
+    adduser user sudo && \
+    adduser user docker
+
 
 # setup zsh
 RUN apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting neofetch && \
