@@ -3,7 +3,7 @@ FROM kalilinux/kali-rolling:latest
 # Install dependencies
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata.
-RUN apt install -y sudo ssh nvidia-cuda-toolkit nvidia-driver
+RUN apt install -y sudo ssh nvidia-cuda-toolkit nvidia-driver git curl wget
 
 # Add a new user
 RUN useradd -ms /bin/bash user && \
